@@ -1,5 +1,6 @@
 package com.gtv.comment.model.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -7,10 +8,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
+@AllArgsConstructor
 public class CommentDTO {
 
-    private Long id;
-    private String details;
-    private String section;
-    private String username;
+    public Long id;
+    public String name;
+    public String details;
+    public String section;
 }

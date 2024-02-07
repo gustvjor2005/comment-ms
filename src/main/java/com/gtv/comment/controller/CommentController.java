@@ -3,6 +3,7 @@ package com.gtv.comment.controller;
 import com.gtv.comment.business.CommentService;
 import com.gtv.comment.model.api.ResponseMessage;
 import com.gtv.comment.model.dto.CommentDTO;
+import com.gtv.comment.model.dto.UserDTO;
 import com.gtv.comment.model.entity.CommentEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,22 @@ public class CommentController {
 
     @Autowired
     CommentService commentService;
+
+    @PostMapping("/user")
+    public void saveUser(@RequestBody UserDTO userDTO){
+        commentService.saveUser(userDTO);
+
+    }
+/*
+    @GetMapping("/userdet/{id}")
+    public UserDTO getCommentofUser(@PathVariable("id") Long id){
+        return commentService.getCommentsofUser(id);
+    }
+
+    @GetMapping("/commentdet/{id}")
+    public CommentDTO getCommentDetail(@PathVariable("id") Long id){
+        return commentService.getCommentDetail(id);
+    }
 
     @GetMapping("/comments")
     public List<CommentDTO> getAll(){
@@ -39,6 +56,6 @@ public class CommentController {
         responseMessage.setStatus("E002");
         responseMessage.setDetail("Comment added");
         return ResponseEntity.status(HttpStatus.OK).body(responseMessage);
-    }
+    }*/
 
 }

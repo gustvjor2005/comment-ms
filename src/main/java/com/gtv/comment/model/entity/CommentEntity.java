@@ -15,13 +15,10 @@ public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    //@Column(name = "email", length = 30)
+    @ManyToOne
+    @JoinColumn(name = "id_user", referencedColumnName = "id")
+    private UserEntity userEntity;
     private String details;
     private String section;
-    private String username;
-    //@Column(name = "email", length = 30)
-    private String email;
     private Date day;
-
 }
